@@ -1,4 +1,4 @@
-from vpokerlib.pio_adapter import PioAdapter
+from pio_adapter import PioAdapter
 
 print("Library loaded ok")
 

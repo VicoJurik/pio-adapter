@@ -3,8 +3,9 @@ import sys
 
 from flask import Flask
 
-from vpokerlib.pio_adapter import PioAdapter
-from vpokerlib.mypath import fix_wsl_path
+from config import config
+from pio_adapter import PioAdapter
+from utils import fix_wsl_path
 
 
 EXIT_FAILURE = 1
@@ -67,7 +68,9 @@ def _parse_go(args):
             steps = int(args.split(" ")[0])
     return [seconds, steps]
 
-def _make_path(args): return [fix_wsl_path("/" + "/".join(args))]
+def _make_path(args):
+    path = "/" + "/".join(args)
+    return fix_wsl_path(path) if config["wsl"] else path
 
 def _singleton(args): return [args]
 

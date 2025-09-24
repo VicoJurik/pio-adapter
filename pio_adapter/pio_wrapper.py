@@ -1,5 +1,4 @@
-from vpokerlib.mypath import fix_wsl_path
-from vpokerlib.rand import key as random_key
+from utils import fix_wsl_path, random_key
 
 from .config import config
 from .pio_instance import PioInstance
